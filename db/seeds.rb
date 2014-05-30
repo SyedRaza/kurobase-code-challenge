@@ -3,4 +3,9 @@
 #
 # Examples:
 #
-#   genres = Genre.create([{ title: 'Action' }, { title: 'Comedy' }, { title: 'Horror' }, { title: 'Animation' }, { title: 'Romance' }])
+  Genre.create([{ title: 'Action' }, { title: 'Comedy' }, { title: 'Horror' }, { title: 'Animation' },
+  { title: 'Romance' }, { title: 'Crime' }, { title: 'Drama' }])
+  movie = Movie.new({ title: 'The Shawshank Redemption' })
+  movie.genres << Genre.find_by_title('Crime')
+  movie.genres << Genre.find_by_title('Drama')
+  movie.save

@@ -56,7 +56,9 @@ Rails.application.routes.draw do
   #   end
   namespace :api, defaults: {format: 'json'} do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
-      resources :movies
+      resources :movies do
+        get 'like_or_unlike', on: :member
+      end
       resources :genres
     end
   end
