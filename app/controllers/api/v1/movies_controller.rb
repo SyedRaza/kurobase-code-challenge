@@ -4,19 +4,19 @@ module Api
       respond_to :json
 
       def index
-        respond_with Movie.all
+        respond_with @movies = Movie.all
       end
 
       def show
-        respond_with Movie.find(params[:id])
+        respond_with @movie = Movie.find(params[:id])
       end
 
       def create
-        respond_with Movie.create(params[:Movie])
+        respond_with @movie = Movie.create(params[:Movie])
       end
 
       def update
-        respond_with Movie.update(params[:id], params[:Movie])
+        respond_with @movie = Movie.update(params[:id], params[:Movie])
       end
 
       def like_or_unlike
